@@ -23,7 +23,7 @@ class MapViewModel @Inject constructor(
     private val showLoading: MutableLiveData<Boolean> = MutableLiveData(false)
 
 
-    private val adapterRows = MutableLiveData<List<VehicleModel>>(ArrayList())
+    val adapterRows = MutableLiveData<List<VehicleModel>>(ArrayList())
 
     fun getList(params: MapParams): LiveData<List<VehicleModel>> {
         viewModelScope.launch(globalDispatcher.main) {

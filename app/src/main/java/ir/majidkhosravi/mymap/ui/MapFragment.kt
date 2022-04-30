@@ -32,7 +32,7 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleMap.OnCameraIdleLi
 
     override fun doOtherTasks() {
         selectedVehicle = MapFragmentArgs.fromBundle(requireArguments()).selectedVehicle
-        if (vehiclesList.isNullOrEmpty()) vehiclesList?.addAll(viewModel._adapterRows.value!!)
+        if (vehiclesList.isNullOrEmpty()) vehiclesList?.addAll(viewModel.adapterRows.value!!)
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
