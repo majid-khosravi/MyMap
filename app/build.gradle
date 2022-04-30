@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.plugin.parcelize'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -46,6 +48,8 @@ dependencies {
     implementation "com.google.android.material:material:$material"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
     implementation "androidx.fragment:fragment-ktx:$fragment"
+//    implementation "androidx.fragment:fragment:1.5.0-beta01"
+
 
 
     //  Test
