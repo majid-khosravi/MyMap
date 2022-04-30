@@ -1,13 +1,12 @@
 package ir.majidkhosravi.mymap.viewModel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import ir.majidkhosravi.common.models.VehicleModel
 import ir.majidkhosravi.common.utils.GlobalDispatcher
 import ir.majidkhosravi.domain.models.PureResult
-import ir.majidkhosravi.common.models.VehicleModel
 import ir.majidkhosravi.domain.usecases.MapParams
 import ir.majidkhosravi.domain.usecases.MapUseCase
 import kotlinx.coroutines.flow.collect
@@ -21,31 +20,33 @@ class MapViewModel @Inject constructor(
 ) : BaseViewModel() {
 
 
-    private val _items: MutableLiveData<List<VehicleModel>> = MutableLiveData()
-
-    val items: LiveData<List<VehicleModel>>
-        get() = _items
+    private val showLoading: MutableLiveData<Boolean> = MutableLiveData(false)
 
 
-    fun getList(params: MapParams) {
+    private val adapterRows = MutableLiveData<List<VehicleModel>>(ArrayList())
+
+    fun getList(params: MapParams): LiveData<List<VehicleModel>> {
         viewModelScope.launch(globalDispatcher.main) {
             useCase(params).collect {
                 when (it) {
                     is PureResult.Success -> {
-                        _items.value = it.value.list
+                        showLoading.value = false
+                        adapterRows.value = it.value.list
                     }
                     is PureResult.Loading -> {
-                        Log.e("Majid", "Loading....")
-
+                        showLoading.value = true
                     }
                     is PureResult.Error -> {
-                        Log.e("Majid", "Error: " + it.error)
+                        showLoading.value = false
                     }
                 }
             }
         }
+        return adapterRows
     }
 
+
+    fun showLoading(): LiveData<Boolean> = showLoading
 
 }
 

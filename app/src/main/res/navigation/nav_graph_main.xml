@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/splashFragment">
+
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="ir.majidkhosravi.mymap.ui.SplashFragment"
+        android:label="@string/title_fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_vehiclesListFragment"
+            app:destination="@id/vehiclesListFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/vehiclesListFragment"
+        android:name="ir.majidkhosravi.mymap.ui.VehiclesListFragment"
+        android:label="@string/title_fragment_vehicles_list"
+        tools:layout="@layout/fragment_vehicles_list">
+        <action
+            android:id="@+id/action_vehiclesListFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="ir.majidkhosravi.mymap.ui.MapFragment"
+        android:label="@string/title_fragment_map"
+        tools:layout="@layout/fragment_map">
+
+        <argument
+            android:name="selectedVehicle"
+            app:argType="ir.majidkhosravi.common.models.VehicleModel"
+            app:nullable="false" />
+
+    </fragment>
+
+</navigation>

@@ -1,4 +1,35 @@
 package ir.majidkhosravi.mymap.ui.base
 
-class BaseFragment {
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+
+abstract class BaseFragment : Fragment() {
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View? {
+        val view = inflater.inflate(getLayoutResource(), container, false)
+        return view
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        doOtherTasks()
+        startObservation()
+    }
+
+
+    protected abstract fun getLayoutResource(): Int
+
+    protected abstract fun doOtherTasks()
+
+    open fun startObservation(){}
+
 }
