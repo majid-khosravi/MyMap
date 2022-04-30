@@ -23,7 +23,7 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleMap.OnCameraIdleLi
     private val viewModel: MapViewModel by activityViewModels()
 
     private lateinit var mMap: GoogleMap
-    private var vehiclesList: ArrayList<VehicleModel>? = null
+    private var vehiclesList: ArrayList<VehicleModel>? = ArrayList()
     private var selectedVehicle: VehicleModel? = null
 
 
@@ -32,7 +32,7 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleMap.OnCameraIdleLi
 
     override fun doOtherTasks() {
         selectedVehicle = MapFragmentArgs.fromBundle(requireArguments()).selectedVehicle
-        if (vehiclesList.isNullOrEmpty()) vehiclesList?.addAll(viewModel.adapterRows.value!!)
+        vehiclesList?.addAll(viewModel.adapterRows.value!!)
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
