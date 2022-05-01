@@ -3,6 +3,7 @@ package ir.majidkhosravi.mymap
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.viewModelScope
 import ir.majidkhosravi.common.utils.GlobalDispatcher
+import ir.majidkhosravi.data.utils.NetworkConstants
 import ir.majidkhosravi.domain.models.PureResult
 import ir.majidkhosravi.domain.usecases.MapParams
 import ir.majidkhosravi.domain.usecases.MapUseCase
@@ -75,14 +76,16 @@ class MapViewModelTest {
 
     @Test
     fun getVehiclesList_withCorrectResponse() {
-        val result = viewModel.getList(
+        viewModel.fetchVehiclesList(
             MapParams(
-                lat1 = 53.694865,
-                lon1 = 9.757589,
-                lat2 = 53.394655,
-                lon2 = 10.099891
+                lat1 = NetworkConstants.p1Lat,
+                lon1 = NetworkConstants.p1Lon,
+                lat2 = NetworkConstants.p2Lat,
+                lon2 = NetworkConstants.p2Lon
             )
-        ).getOrAwaitValue()
+        )
+
+        val result = viewModel.adapterRows.getOrAwaitValue()
         MatcherAssert.assertThat(result, IsEqual(poiList.list))
     }
 

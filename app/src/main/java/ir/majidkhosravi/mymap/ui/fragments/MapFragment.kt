@@ -1,15 +1,11 @@
 package ir.majidkhosravi.mymap.ui.fragments
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import dagger.hilt.android.AndroidEntryPoint
 import ir.majidkhosravi.common.models.VehicleModel
@@ -18,7 +14,7 @@ import ir.majidkhosravi.mymap.ui.base.BaseFragment
 import ir.majidkhosravi.mymap.viewModel.MapViewModel
 
 @AndroidEntryPoint
-class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleMap.OnCameraIdleListener {
+class MapFragment : BaseFragment(), OnMapReadyCallback {
 
     private val viewModel: MapViewModel by activityViewModels()
 
@@ -32,7 +28,9 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleMap.OnCameraIdleLi
 
     override fun doOtherTasks() {
         selectedVehicle = MapFragmentArgs.fromBundle(requireArguments()).selectedVehicle
-        vehiclesList?.addAll(viewModel.adapterRows.value!!)
+        viewModel.adapterRows.value?.let {
+            vehiclesList?.addAll(it)
+        }
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -41,18 +39,15 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleMap.OnCameraIdleLi
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-//        mMap.setInfoWindowAdapter(CustomAdapter(requireContext()))
-
 
         selectedVehicle?.let {
             val latLng = LatLng(it.coordinate.latitude, it.coordinate.longitude)
             mMap.addMarker(MarkerOptions().position(latLng).title(it.fleetType))
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f))
-            vehiclesList?.let {list ->
+            vehiclesList?.let { list ->
                 bindVehicles(list)
             }
-
-        } ?: mMap.setOnCameraIdleListener(this)
+        }
 
     }
 
@@ -65,27 +60,6 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleMap.OnCameraIdleLi
         mMap.apply {
             addMarker(MarkerOptions().position(latlng).title(vehicle.fleetType))
         }
-    }
-
-
-    class CustomAdapter(private val context: Context) : GoogleMap.InfoWindowAdapter {
-        override fun getInfoWindow(marker: Marker): View? {
-            val view = LayoutInflater.from(context).inflate(R.layout.map_info_window, null)
-            return view
-        }
-
-        override fun getInfoContents(marker: Marker): View? {
-//            marker.setIcon()
-            return null
-        }
-
-    }
-
-
-
-    override fun onCameraIdle() {
-        val bounds = mMap.projection.visibleRegion.latLngBounds
-
     }
 
 
