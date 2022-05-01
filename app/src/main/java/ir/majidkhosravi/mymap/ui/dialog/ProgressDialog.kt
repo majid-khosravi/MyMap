@@ -1,4 +1,4 @@
-package ir.majidkhosravi.mymap.ui
+package ir.majidkhosravi.mymap.ui.dialog
 
 import android.annotation.SuppressLint
 import android.app.Dialog

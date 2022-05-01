@@ -1,4 +1,4 @@
-package ir.majidkhosravi.mymap.ui
+package ir.majidkhosravi.mymap.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

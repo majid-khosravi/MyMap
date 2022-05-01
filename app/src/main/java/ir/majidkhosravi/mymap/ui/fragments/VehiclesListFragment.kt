@@ -1,7 +1,7 @@
-package ir.majidkhosravi.mymap.ui
+package ir.majidkhosravi.mymap.ui.fragments
 
-import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +13,7 @@ import ir.majidkhosravi.mymap.ui.adapter.ActionListener
 import ir.majidkhosravi.mymap.ui.adapter.UiAction
 import ir.majidkhosravi.mymap.ui.adapter.VehiclesAdapter
 import ir.majidkhosravi.mymap.ui.base.BaseFragment
+import ir.majidkhosravi.mymap.ui.dialog.ProgressDialog
 import ir.majidkhosravi.mymap.viewModel.MapViewModel
 
 @AndroidEntryPoint
@@ -51,13 +52,18 @@ class VehiclesListFragment : BaseFragment() {
     }
 
     override fun startObservation() {
-        viewModel.getList(MapParams("", "")).observe(this) {
+        viewModel.getList(MapParams("", "")).observe(viewLifecycleOwner) {
             if (it != null && it.isNotEmpty()) {
                 adapter.submitItems(it)
             }
         }
+        viewModel.getErrorMessage().observe(viewLifecycleOwner) {
+            it?.let {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            }
+        }
 
-        viewModel.showLoading().observe(this) {
+        viewModel.showLoading().observe(viewLifecycleOwner) {
             if (it == null || it == false) {
                 recycler?.visibility = View.VISIBLE
                 progressDialog?.dismiss()

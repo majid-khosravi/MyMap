@@ -21,6 +21,7 @@ class MapViewModel @Inject constructor(
 
 
     private val showLoading: MutableLiveData<Boolean> = MutableLiveData(false)
+    private val errorMessage: SingleLiveEvent<String?> = SingleLiveEvent(null)
 
 
     val adapterRows = MutableLiveData<List<VehicleModel>>(ArrayList())
@@ -37,6 +38,7 @@ class MapViewModel @Inject constructor(
                         showLoading.value = true
                     }
                     is PureResult.Error -> {
+                        errorMessage.value = it.error.message
                         showLoading.value = false
                     }
                 }
@@ -46,7 +48,9 @@ class MapViewModel @Inject constructor(
     }
 
 
-    fun showLoading(): LiveData<Boolean> = showLoading
+    fun showLoading(): LiveData<Boolean?> = showLoading
+
+    fun getErrorMessage(): LiveData<String?> = errorMessage
 
 }
 

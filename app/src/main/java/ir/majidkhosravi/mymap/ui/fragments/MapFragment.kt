@@ -1,4 +1,4 @@
-package ir.majidkhosravi.mymap.ui
+package ir.majidkhosravi.mymap.ui.fragments
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -46,7 +46,7 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleMap.OnCameraIdleLi
 
         selectedVehicle?.let {
             val latLng = LatLng(it.coordinate.latitude, it.coordinate.longitude)
-            mMap.addMarker(MarkerOptions().position(latLng).title("MY MAP"))
+            mMap.addMarker(MarkerOptions().position(latLng).title(it.fleetType))
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f))
             vehiclesList?.let {list ->
                 bindVehicles(list)

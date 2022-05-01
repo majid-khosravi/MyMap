@@ -18,7 +18,7 @@
             android:value="AIzaSyDMJL149Xx-kYaCEvDLg_r2JBZHgwDsK1Q" />
 
         <activity
-            android:name=".ui.MapsActivity"
+            android:name="ir.majidkhosravi.mymap.ui.activity.MapsActivity"
             android:exported="true"
             android:label="@string/title_activity_maps"
             android:theme="@style/Theme.Material3.Dark.NoActionBar">

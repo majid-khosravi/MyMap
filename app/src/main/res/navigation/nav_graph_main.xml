@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="ir.majidkhosravi.mymap.ui.SplashFragment"
+        android:name="ir.majidkhosravi.mymap.ui.fragments.SplashFragment"
         android:label="@string/title_fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/vehiclesListFragment"
-        android:name="ir.majidkhosravi.mymap.ui.VehiclesListFragment"
+        android:name="ir.majidkhosravi.mymap.ui.fragments.VehiclesListFragment"
         android:label="@string/title_fragment_vehicles_list"
         tools:layout="@layout/fragment_vehicles_list">
         <action
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/mapFragment"
-        android:name="ir.majidkhosravi.mymap.ui.MapFragment"
+        android:name="ir.majidkhosravi.mymap.ui.fragments.MapFragment"
         android:label="@string/title_fragment_map"
         tools:layout="@layout/fragment_map">
 

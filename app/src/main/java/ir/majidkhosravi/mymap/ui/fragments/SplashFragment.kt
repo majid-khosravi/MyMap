@@ -1,4 +1,4 @@
-package ir.majidkhosravi.mymap.ui
+package ir.majidkhosravi.mymap.ui.fragments
 
 import android.os.Handler
 import androidx.navigation.fragment.findNavController
