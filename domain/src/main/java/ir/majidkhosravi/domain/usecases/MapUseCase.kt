@@ -16,4 +16,4 @@ class MapUseCase @Inject constructor(
 
 }
 
-data class MapParams(val lat: String, val lon: String) : UseCaseParams()
+data class MapParams(val lat1: Double, val lon1: Double, val lat2: Double, val lon2: Double) : UseCaseParams()

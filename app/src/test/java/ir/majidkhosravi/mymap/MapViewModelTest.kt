@@ -75,7 +75,14 @@ class MapViewModelTest {
 
     @Test
     fun getVehiclesList_withCorrectResponse() {
-        val result = viewModel.getList(MapParams("","")).getOrAwaitValue()
+        val result = viewModel.getList(
+            MapParams(
+                lat1 = 53.694865,
+                lon1 = 9.757589,
+                lat2 = 53.394655,
+                lon2 = 10.099891
+            )
+        ).getOrAwaitValue()
         MatcherAssert.assertThat(result, IsEqual(poiList.list))
     }
 
@@ -89,6 +96,5 @@ class MapViewModelTest {
             }
         }
     }
-
 
 }

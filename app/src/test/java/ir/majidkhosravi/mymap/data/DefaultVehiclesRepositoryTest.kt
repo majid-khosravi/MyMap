@@ -1,7 +1,7 @@
 package ir.majidkhosravi.mymap.data
 
 import ir.majidkhosravi.data.models.ApiResult
-import ir.majidkhosravi.domain.models.UseCaseParams
+import ir.majidkhosravi.domain.usecases.MapParams
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.hamcrest.MatcherAssert
@@ -24,7 +24,13 @@ class DefaultVehiclesRepositoryTest {
 
     @Test
     fun getApiResult_fetchFromRemoteDateSource() = runBlockingTest {
-        val result = remoteDataSource.getVehicleResponse(UseCaseParams())
+        val result = remoteDataSource.getVehicleResponse(
+            MapParams(
+                lat1 = 53.694865,
+                lon1 = 9.757589,
+                lat2 = 53.394655,
+                lon2 = 10.099891
+            ))
         MatcherAssert.assertThat(result, IsEqual(ApiResult.Success(poiList)))
     }
 

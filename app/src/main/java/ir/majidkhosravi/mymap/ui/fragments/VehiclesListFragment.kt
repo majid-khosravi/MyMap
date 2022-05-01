@@ -52,7 +52,14 @@ class VehiclesListFragment : BaseFragment() {
     }
 
     override fun startObservation() {
-        viewModel.getList(MapParams("", "")).observe(viewLifecycleOwner) {
+        viewModel.getList(
+            MapParams(
+                lat1 = 53.694865,
+                lon1 = 9.757589,
+                lat2 = 53.394655,
+                lon2 = 10.099891
+            )
+        ).observe(viewLifecycleOwner) {
             if (it != null && it.isNotEmpty()) {
                 adapter.submitItems(it)
             }

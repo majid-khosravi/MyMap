@@ -49,8 +49,8 @@ class NetworkModule {
 
         return OkHttpClient
             .Builder()
-            .writeTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
             .addInterceptor(loggingInterceptor)
             .addInterceptor(insertApiKeyInterceptor)
             .build()

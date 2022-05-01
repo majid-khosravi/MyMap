@@ -2,8 +2,8 @@ package ir.majidkhosravi.domain.repositories
 
 import ir.majidkhosravi.common.models.PoiList
 import ir.majidkhosravi.domain.models.FlowResult
-import ir.majidkhosravi.domain.models.UseCaseParams
+import ir.majidkhosravi.domain.usecases.MapParams
 
 interface MapRepository {
-    fun getVehiclesList(param: UseCaseParams?): FlowResult<PoiList>
+    fun getVehiclesList(param: MapParams?): FlowResult<PoiList>
 }

@@ -2,9 +2,9 @@ package ir.majidkhosravi.data.apiservices
 
 import ir.majidkhosravi.common.models.PoiList
 import ir.majidkhosravi.data.models.ApiResult
-import ir.majidkhosravi.domain.models.UseCaseParams
+import ir.majidkhosravi.domain.usecases.MapParams
 
 interface RemoteDateSource {
 
-    suspend fun getVehicleResponse(param: UseCaseParams?): ApiResult<PoiList>
+    suspend fun getVehicleResponse(param: MapParams?): ApiResult<PoiList>
 }
