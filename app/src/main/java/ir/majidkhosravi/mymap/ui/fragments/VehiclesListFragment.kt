@@ -10,7 +10,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import ir.majidkhosravi.data.utils.NetworkConstants
 import ir.majidkhosravi.domain.usecases.MapParams
 import ir.majidkhosravi.mymap.R
-import ir.majidkhosravi.mymap.ui.adapter.ActionListener
 import ir.majidkhosravi.mymap.ui.adapter.UiAction
 import ir.majidkhosravi.mymap.ui.adapter.VehiclesAdapter
 import ir.majidkhosravi.mymap.ui.base.BaseFragment
@@ -27,15 +26,13 @@ class VehiclesListFragment : BaseFragment() {
 
 
     private val adapter by lazy {
-        VehiclesAdapter(object : ActionListener {
-            override fun onUiActionClicked(action: UiAction) {
-                if (action is UiAction.VehicleSelected) {
-                    findNavController().navigate(
-                        VehiclesListFragmentDirections.actionVehiclesListFragmentToMapFragment(action.selectedVehicle)
-                    )
-                }
+        VehiclesAdapter { action ->
+            if (action is UiAction.VehicleSelected) {
+                findNavController().navigate(
+                    VehiclesListFragmentDirections.actionVehiclesListFragmentToMapFragment(action.selectedVehicle)
+                )
             }
-        })
+        }
     }
 
     override fun getLayoutResource(): Int = R.layout.fragment_vehicles_list

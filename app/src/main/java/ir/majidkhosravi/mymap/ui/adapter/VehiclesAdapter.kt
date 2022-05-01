@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ir.majidkhosravi.common.models.VehicleModel
 import ir.majidkhosravi.mymap.R
 
-class VehiclesAdapter(private val listener: ActionListener) :
+class VehiclesAdapter(private val callback: (UiAction) -> Unit) :
     RecyclerView.Adapter<VehiclesViewHolder>() {
 
     private var itemsRows: MutableList<VehicleModel> = ArrayList()
@@ -16,23 +16,20 @@ class VehiclesAdapter(private val listener: ActionListener) :
     @SuppressLint("NotifyDataSetChanged")
     fun submitItems(list: List<VehicleModel>) {
         itemsRows.apply {
-            val diffCallback = VehiclesDiffCallback(itemsRows, list)
-            val diffResult = DiffUtil.calculateDiff(diffCallback)
             clear()
             addAll(list)
-            diffResult.dispatchUpdatesTo(this@VehiclesAdapter)
             notifyDataSetChanged()
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VehiclesViewHolder {
         return VehiclesViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_vehicles, parent, false), listener)
+            .inflate(R.layout.item_vehicles, parent, false))
     }
 
     override fun onBindViewHolder(holder: VehiclesViewHolder, position: Int) {
         itemsRows[position].let {
-            holder.bind(it)
+            holder.bind(it, callback)
         }
     }
 

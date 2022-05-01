@@ -14,7 +14,7 @@ class ProgressDialog(context: Context) : Dialog(context) {
         val inflate = LayoutInflater.from(context).inflate(R.layout.dialog_progress, null)
         setContentView(inflate)
         setCancelable(false)
-        window!!.setBackgroundDrawable(
+        window?.setBackgroundDrawable(
             ColorDrawable(Color.TRANSPARENT)
         )
     }

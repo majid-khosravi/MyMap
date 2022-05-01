@@ -42,7 +42,7 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
 
         selectedVehicle?.let {
             val latLng = LatLng(it.coordinate.latitude, it.coordinate.longitude)
-            mMap.addMarker(MarkerOptions().position(latLng).title(it.fleetType))
+            mMap.addMarker(MarkerOptions().position(latLng).title(it.fleetType + "\t" + it.id))
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f))
             vehiclesList?.let { list ->
                 bindVehicles(list)
@@ -58,7 +58,7 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
     private fun bindVehicle(vehicle: VehicleModel) {
         val latlng = LatLng(vehicle.coordinate.latitude, vehicle.coordinate.longitude)
         mMap.apply {
-            addMarker(MarkerOptions().position(latlng).title(vehicle.fleetType))
+            addMarker(MarkerOptions().position(latlng).title(vehicle.fleetType + "\t" + vehicle.id))
         }
     }
 
