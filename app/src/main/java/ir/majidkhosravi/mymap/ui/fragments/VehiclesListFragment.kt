@@ -76,6 +76,6 @@ class VehiclesListFragment : BaseFragment() {
                     Toast.makeText(requireContext(), action.error, Toast.LENGTH_SHORT).show()
             }
         }
-
     }
+
 }
