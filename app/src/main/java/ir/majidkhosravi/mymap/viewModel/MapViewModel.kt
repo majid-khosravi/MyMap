@@ -26,7 +26,7 @@ class MapViewModel @Inject constructor(
 
     val adapterRows = MutableLiveData<List<VehicleModel>>(ArrayList())
 
-    fun getList(params: MapParams): LiveData<List<VehicleModel>> {
+    fun getList(params: MapParams?): LiveData<List<VehicleModel>> {
         viewModelScope.launch(globalDispatcher.main) {
             useCase(params).collect {
                 when (it) {

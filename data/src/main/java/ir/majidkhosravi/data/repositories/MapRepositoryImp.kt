@@ -1,6 +1,6 @@
 package ir.majidkhosravi.data.repositories
 
-import ir.majidkhosravi.data.apiservices.RemoteDateSource
+import ir.majidkhosravi.data.apiservices.MapRemoteDateSource
 import ir.majidkhosravi.data.mappers.flowResult
 import ir.majidkhosravi.common.models.PoiList
 import ir.majidkhosravi.domain.models.FlowResult
@@ -11,13 +11,13 @@ import javax.inject.Singleton
 
 @Singleton
 class MapRepositoryImp @Inject constructor(
-    private val remoteDateSource: RemoteDateSource,
+    private val mapRemoteDateSource: MapRemoteDateSource,
 ) : MapRepository {
 
 
-    override fun getVehiclesList(param: UseCaseParams): FlowResult<PoiList> =
+    override fun getVehiclesList(param: UseCaseParams?): FlowResult<PoiList> =
         flowResult {
-            remoteDateSource.getVehicleResponse(param)
+            mapRemoteDateSource.getVehicleResponse(param)
         }
 
 }

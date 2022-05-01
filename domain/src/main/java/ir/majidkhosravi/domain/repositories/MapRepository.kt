@@ -5,5 +5,5 @@ import ir.majidkhosravi.domain.models.FlowResult
 import ir.majidkhosravi.domain.models.UseCaseParams
 
 interface MapRepository {
-    fun getVehiclesList(param: UseCaseParams): FlowResult<PoiList>
+    fun getVehiclesList(param: UseCaseParams?): FlowResult<PoiList>
 }

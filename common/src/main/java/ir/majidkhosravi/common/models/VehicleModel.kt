@@ -11,7 +11,7 @@ data class VehicleModel(
     @SerializedName("fleetType")
     val fleetType: String?,
     @SerializedName("heading")
-    val heading: Float,
+    val heading: Double,
     @SerializedName("coordinate")
     val coordinate: CoordinateModel
     ):Parcelable

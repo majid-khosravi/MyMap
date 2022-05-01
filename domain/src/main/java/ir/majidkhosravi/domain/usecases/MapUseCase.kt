@@ -10,7 +10,7 @@ class MapUseCase @Inject constructor(
     private val repository: MapRepository,
 ) : UseCase<PoiList, MapParams> {
 
-    override operator fun invoke(param: MapParams): FlowResult<PoiList> {
+    override operator fun invoke(param: MapParams?): FlowResult<PoiList> {
         return repository.getVehiclesList(param)
     }
 
