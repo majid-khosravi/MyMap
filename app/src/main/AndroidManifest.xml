@@ -26,7 +26,7 @@
     <!--
     Also, We have taken here:
     1- An Internet permission to connect with the rest API endpoint and take some data
-    2- I've assigned the MapApplication as a basic class of the Application
+    2- I've assigned the {@link MapApplication} as a basic class of the Application
     3- I have added the Google Maps API_KEY as a meta-data here
     -->
 
