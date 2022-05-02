@@ -11,10 +11,12 @@ import ir.majidkhosravi.mymap.R
 
 
 fun AppCompatImageView.bindVehicleIcon(vehicle: VehicleModel) {
-    if (vehicle.fleetType == "POOLING") {
+    vehicle.fleetType?.let {
+        if (it == "POOLING") {
         setImageResource(R.drawable.ic_pooling)
     } else {
         setImageResource(R.drawable.ic_taxi)
+    }
     }
 }
 
