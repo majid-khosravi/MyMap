@@ -6,6 +6,11 @@ import ir.majidkhosravi.domain.models.UseCaseParams
 import ir.majidkhosravi.domain.repositories.MapRepository
 import javax.inject.Inject
 
+/**
+ *  There is we have a child of [UseCase], this UseCase takes a flowable object of vehicles list from [MapRepository]
+ *  and also gives that to [MapViewModel]
+ */
+
 class MapUseCase @Inject constructor(
     private val repository: MapRepository,
 ) : UseCase<PoiList, MapParams> {
