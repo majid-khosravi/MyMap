@@ -5,13 +5,14 @@
 
 This Project is a coding test that I've recieved from FreeNow
 
-\n
-
+ 
+ 
 
 ## What was our motivation? and why did you build this project?
 
 This Project is a coding test that I've received from FreeNow.
 Also according to my interest to develop a new project that implemented the Google Maps in this, I've decided to write it.
+
 
 
 
@@ -21,9 +22,11 @@ I have learned more about Clean Architecture, Google Maps, and providing proper 
 
 
 
+
 ## What makes your project stand out?
 
 In my opinion, this project furthermore testing and, a new experience of some technologies that I didn't have, was the best practice for implementation for me.
+
 
 
 
@@ -52,6 +55,7 @@ In my opinion, this project furthermore testing and, a new experience of some te
  #### [10- Navigation Component](https://developer.android.com/guide/navigation)
  
  
+ 
 
 
 Considering the common architectural principles, each application should have at least two layers:
@@ -62,6 +66,6 @@ Also, We can add an additional layer called the `domain` layer to simplify and r
 Furthermore these principles, I've added the `common` module contains everything we need to get shared between the other modules.
 
 
-<img src="https://user-images.githubusercontent.com/42710606/166325914-e4acedd9-4e5d-412f-98cd-295f925cbc94.png" width="250px" />
+<img src="https://user-images.githubusercontent.com/42710606/166325914-e4acedd9-4e5d-412f-98cd-295f925cbc94.png" width="400px" />
 
 
