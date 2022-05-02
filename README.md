@@ -5,7 +5,7 @@
 
 This Project is a coding test that I've recieved from FreeNow
 
-
+\n
 
 
 ## What was our motivation? and why did you build this project?
@@ -56,9 +56,9 @@ In my opinion, this project furthermore testing and, a new experience of some te
 
 Considering the common architectural principles, each application should have at least two layers:
 
-The UI layer that displays application data on the screen.
-The data layer that contains the business logic of your app and exposes application data.
-Also, We can add an additional layer called the domain layer to simplify and reuse the interactions between the UI and data layers.
+The `UI` layer that displays application data on the screen.
+The `data` layer that contains the business logic of your app and exposes application data.
+Also, We can add an additional layer called the `domain` layer to simplify and reuse the interactions between the UI and data layers.
 Furthermore these principles, I've added the `common` module contains everything we need to get shared between the other modules.
 
 
