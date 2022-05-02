@@ -5,5 +5,5 @@
     <string name="title_fragment_vehicles_list">Vehicles List Fragment</string>
     <string name="title_fragment_map">Map Fragment</string>
     <string name="text_email_address">Developed By: majid.khosravi89@gmail.com</string>
-    <string name="vehicle_number">No: %d$</string>
+    <string name="vehicle_number">No: %d</string>
 </resources>
