@@ -1,39 +1,35 @@
 # MyMap
 
 
-
-![Clean_Arch](https://user-images.githubusercontent.com/42710606/166315687-7c077b01-46ce-4956-ab3b-6d4d22c5fd32.png)
-
-
-# What was our motivation?
+## What was our motivation?
 
 This Project is a coding test that I've recieved from FreeNow
 
 
 
 
-# What was our motivation? and why did you build this project?
+## What was our motivation? and why did you build this project?
 
 This Project is a coding test that I've received from FreeNow.
 Also according to my interest to develop a new project that implemented the Google Maps in this, I've decided to write it.
 
 
 
-# What did I learn?
+## What did I learn?
 
 I have learned more about Clean Architecture, Google Maps, and providing proper documents for my codes.
 
 
 
-# What makes your project stand out?
+## What makes your project stand out?
 
 In my opinion, this project furthermore testing and, a new experience of some technologies that I didn't have, was the best practice for implementation for me.
 
 
 
 
-# Let's review this application in a vision:
-# I've consumed of these libraries & technologies here:
+## Let's review this application in a vision:
+## I've consumed of these libraries & technologies here:
  
  #### [1- Clean Architecture](https://developer.android.com/topic/architecture)
 
