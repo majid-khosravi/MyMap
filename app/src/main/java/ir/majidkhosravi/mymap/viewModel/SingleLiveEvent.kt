@@ -8,6 +8,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import java.util.concurrent.atomic.AtomicBoolean
 
+/**
+ * The SingleLiveEvent class is an additional class of androidx.lifecycle and I've added this source directly
+ *
+ */
+
 
 /**
  * A lifecycle-aware observable that sends only new updates after subscription, used for events like

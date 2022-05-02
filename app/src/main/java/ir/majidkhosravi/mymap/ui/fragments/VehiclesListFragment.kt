@@ -10,11 +10,35 @@ import dagger.hilt.android.AndroidEntryPoint
 import ir.majidkhosravi.data.utils.NetworkConstants
 import ir.majidkhosravi.domain.usecases.MapParams
 import ir.majidkhosravi.mymap.R
-import ir.majidkhosravi.mymap.ui.adapter.UiAction
+import ir.majidkhosravi.mymap.utils.UiAction
 import ir.majidkhosravi.mymap.ui.adapter.VehiclesAdapter
 import ir.majidkhosravi.mymap.ui.base.BaseFragment
 import ir.majidkhosravi.mymap.ui.dialog.ProgressDialog
 import ir.majidkhosravi.mymap.viewModel.MapViewModel
+
+
+/**
+ * This Fragment has used of {@link AndroidEntryPoint} annotation of the Hilt DI library
+ * this annotation marks an Android component class to be setup for injection
+ * with the standard Hilt Dagger Android components.
+ */
+
+
+/**
+ * We've created an instance of vehicles adapter by items that we observed from ViewModel
+ * and when this fetching is not completed, we must show a progress dialog as a loading state
+ * and when an error has been raised we have to show a toast message to announce to the user what happened
+ */
+
+
+/**
+ * Also when the user selects an item in the list we're going to go {@list MaoFragment}
+ * and show to them the locations of the vehicles on GoogleMap
+ *
+ * As you know, to share a ViewModel between two or more fragments, we must use the activity lifecycle owner
+ * to generate and inject that ViewModel by using {@link activityViewModels} inline function.
+ */
+
 
 @AndroidEntryPoint
 class VehiclesListFragment : BaseFragment() {

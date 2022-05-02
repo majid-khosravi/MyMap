@@ -13,6 +13,33 @@ import ir.majidkhosravi.mymap.R
 import ir.majidkhosravi.mymap.ui.base.BaseFragment
 import ir.majidkhosravi.mymap.viewModel.MapViewModel
 
+/**
+ * This fragment helps us to show a {@link GoogleMapFragment} component
+ *
+ * The main difference when using this fragment instead of the fragments are:
+ * it includes an {@link OnMapReadyCallback} and also it's a necessary callback that gives me an instance of {@link GoogleMap}
+ */
+
+/**
+ * This Fragment has used of {@link AndroidEntryPoint} annotation of the Hilt DI library
+ * this annotation marks an Android component class to be setup for injection
+ * with the standard Hilt Dagger Android components.
+ *
+ */
+
+/**
+ * We had an injected item of a vehicle of the previous fragment
+ * There is a ViewModel that is shared between this fragment and {@link VehiclesListFragment}
+ * and we are going take the list of vehicles of that
+ * after that we need to show the whole vehicle's location on the map
+ *
+ * As you know, to share a ViewModel between two or more fragments, we must use the activity lifecycle owner
+ * to generate and inject that ViewModel by using {@link activityViewModels} inline function.
+ *
+ * when the user selects one of them, we have to zoom to it and show that location center of the map.
+ */
+
+
 @AndroidEntryPoint
 class MapFragment : BaseFragment(), OnMapReadyCallback {
 

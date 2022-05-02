@@ -8,10 +8,23 @@ import ir.majidkhosravi.common.utils.GlobalDispatcher
 import ir.majidkhosravi.domain.models.PureResult
 import ir.majidkhosravi.domain.usecases.MapParams
 import ir.majidkhosravi.domain.usecases.MapUseCase
-import ir.majidkhosravi.mymap.ui.adapter.UiAction
+import ir.majidkhosravi.mymap.utils.UiAction
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
+/**
+ * The MapViewModel is a shared ViewModel between two fragment
+ * it takes a list and in other words this class with an UseCase can fetch a list of vehicles
+ */
+
+/**
+ * This ViewModel uses the {@link HiltViewModel} annotation to mark constructor dependency injection by Hilt
+ * that annotation will be available for creation by the {@code HiltViewModel} containing a constructor
+ * annotated with {@link javax.inject.Inject} will have its dependencies defined in the constructor
+ * parameters injected by Dagger's Hilt.
+ */
+
 
 @HiltViewModel
 class MapViewModel @Inject constructor(

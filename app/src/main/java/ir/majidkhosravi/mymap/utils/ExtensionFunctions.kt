@@ -5,6 +5,11 @@ import androidx.appcompat.widget.AppCompatTextView
 import ir.majidkhosravi.common.models.VehicleModel
 import ir.majidkhosravi.mymap.R
 
+/**
+ * I've defined some extension functions to bind some values of vehicles item in the list
+ */
+
+
 fun AppCompatImageView.bindVehicleIcon(vehicle: VehicleModel) {
     if (vehicle.fleetType == "POOLING") {
         setImageResource(R.drawable.ic_pooling)

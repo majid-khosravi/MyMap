@@ -8,6 +8,12 @@ import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import ir.majidkhosravi.mymap.R
 
+
+/**
+ * This's a simple custom {@link Dialog} to show a  circle ProgressBar when our view state is in the Loading situation.
+ *
+ */
+
 class ProgressDialog(context: Context) : Dialog(context) {
     init {
         @SuppressLint("InflateParams")

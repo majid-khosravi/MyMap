@@ -6,6 +6,14 @@ import ir.majidkhosravi.mymap.R
 import ir.majidkhosravi.mymap.ui.base.BaseFragment
 import java.util.concurrent.TimeUnit
 
+
+/**
+ * This fragment plays the role of entrance for this application
+ * when the user taps on the application in the launcher we show this fragment for 2 second
+ * and we can take some configuration of application here if we have this option.
+ *
+ */
+
 class SplashFragment : BaseFragment() {
 
     companion object {
