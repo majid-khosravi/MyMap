@@ -1,0 +1,92 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.plugin.parcelize'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "ir.majidkhosravi.mymap"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    //  Kotlin Extensions
+    implementation "androidx.core:core-ktx:$core_ktx"
+
+    //  Android Component
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+    implementation "androidx.fragment:fragment-ktx:$fragment"
+
+
+
+    //  Test
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$test_ext"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1'
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    // Google services
+    implementation "com.google.android.gms:play-services-location:$play_services_location"
+    implementation "com.google.android.gms:play-services-maps:$play_services_maps"
+
+
+    implementation "com.google.code.gson:gson:$gson"
+
+
+    // DI (hilt)
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
+
+    // Test hilt test
+    testImplementation "com.google.dagger:hilt-android-testing:$hiltVersion"
+    kaptTest "com.google.dagger:hilt-android-compiler:$hiltVersion"
+
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation"
+
+
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCorutine"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCorutine"
+
+
+    implementation project(':domain')
+    implementation project(':data')
+    implementation project(':common')
+
+
+}
