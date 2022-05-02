@@ -7,6 +7,10 @@ import ir.majidkhosravi.domain.models.FlowResult
 import ir.majidkhosravi.domain.repositories.MapRepository
 import ir.majidkhosravi.domain.usecases.MapParams
 
+/**
+ * We have a fake repository for our test cases that extends of [MapRepository]
+ */
+
 class FakeMapRepository(private val datasource: RemoteDateSource) : MapRepository {
 
     override fun getVehiclesList(param: MapParams?): FlowResult<PoiList> =

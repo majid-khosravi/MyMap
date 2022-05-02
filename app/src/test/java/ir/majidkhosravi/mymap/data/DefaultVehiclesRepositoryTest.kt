@@ -9,6 +9,11 @@ import org.hamcrest.core.IsEqual
 import org.junit.Before
 import org.junit.Test
 
+/**
+ * I have written two test case here about fetching [ApiResult] from [FakeMapRemoteDateSource]
+ *
+ */
+
 @ExperimentalCoroutinesApi
 class DefaultVehiclesRepositoryTest {
 

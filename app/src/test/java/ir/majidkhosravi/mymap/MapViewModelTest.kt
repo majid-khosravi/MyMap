@@ -3,6 +3,7 @@ package ir.majidkhosravi.mymap
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.viewModelScope
 import ir.majidkhosravi.common.utils.GlobalDispatcher
+import ir.majidkhosravi.data.models.ApiResult
 import ir.majidkhosravi.data.utils.NetworkConstants
 import ir.majidkhosravi.domain.models.PureResult
 import ir.majidkhosravi.domain.usecases.MapParams
@@ -25,6 +26,10 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
+/**
+ * I have written two test case here about fetch vehicles list from [FakeMapRemoteDateSource] and its repository.
+ *
+ */
 
 @ExperimentalCoroutinesApi
 class MapViewModelTest {

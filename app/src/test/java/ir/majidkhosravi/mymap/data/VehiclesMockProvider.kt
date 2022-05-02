@@ -5,6 +5,9 @@ import ir.majidkhosravi.common.models.PoiList
 import ir.majidkhosravi.common.models.VehicleModel
 import ir.majidkhosravi.data.models.ErrorModel
 
+/**
+ * It's just a muck date provider that uses in our test cases
+ */
 
 object VehiclesMockProvider {
 

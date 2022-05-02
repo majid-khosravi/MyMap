@@ -6,6 +6,10 @@ import ir.majidkhosravi.data.models.ApiResult
 import ir.majidkhosravi.domain.models.UseCaseParams
 import ir.majidkhosravi.domain.usecases.MapParams
 
+/**
+ * I've created a mock [RemoteDateSource] here
+ */
+
 class FakeMapRemoteDateSource(private val poiList: PoiList?) : RemoteDateSource {
 
     override suspend fun getVehicleResponse(param: MapParams?): ApiResult<PoiList> {
