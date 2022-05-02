@@ -4,7 +4,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 
 
 /**
- * GlobalDispatcher is a common utils to create and keep instance of {@link CoroutineDispatcher} to use in other modules
+ * GlobalDispatcher is a common utils to create and keep instance of [CoroutineDispatcher] to use in other modules
  */
 
 

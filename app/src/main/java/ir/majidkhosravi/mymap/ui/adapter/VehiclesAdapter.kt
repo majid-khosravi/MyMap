@@ -9,9 +9,9 @@ import ir.majidkhosravi.mymap.R
 import ir.majidkhosravi.mymap.utils.UiAction
 
 /**
- * I've defined this Adapter in a simple way that exists to implement a @{link RecyclerView.Adapter}
+ * I've defined this Adapter in a simple way that exists to implement a [RecyclerView.Adapter]
  * There is only one type of ViewHolders that I've used to show Vehicle rows
- * Also, I had a callback function to catch the whole of click events on rows.
+ * Also, I had a [callback] function to catch the whole of click events on rows.
  * This callback injects whit proper object into ViewHolder and then will use it there.
  */
 

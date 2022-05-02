@@ -10,7 +10,8 @@ import ir.majidkhosravi.mymap.R
 
 
 /**
- * This's a simple custom {@link Dialog} to show a  circle ProgressBar when our view state is in the Loading situation.
+ * This's a simple custom [Dialog] to show a  circle [android.widget.ProgressBar]
+ * when our view state is in the [ir.majidkhosravi.domain.models.PureResult.Loading] situation.
  *
  */
 

@@ -12,7 +12,7 @@ import ir.majidkhosravi.mymap.utils.bindVehicleNumber
 import ir.majidkhosravi.mymap.utils.bindVehicleTitle
 
 /**
- * In this ViewHolder, I'm going to display a plain view that includes 3 components
+ * In this [ViewHolder], I'm going to display a plain view that includes 3 components
  *
  * 1- In the first, I'll show the vehicle type as a title text
  * 2- After that, I'll put the id of the vehicle instead of the number 😉

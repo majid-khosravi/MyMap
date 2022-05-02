@@ -4,7 +4,7 @@ import ir.majidkhosravi.common.models.VehicleModel
 
 
 /**
- * In summarized meaning, the UiAction class can help us to pass and transformation of the UI states,
+ * In summarized meaning, the [UiAction] class can help us to pass and transformation of the UI states,
  * view click listeners and any type that needs to observe in views.
  */
 

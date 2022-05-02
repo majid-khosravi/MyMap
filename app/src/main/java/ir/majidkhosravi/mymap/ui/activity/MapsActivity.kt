@@ -14,22 +14,22 @@ import kotlinx.coroutines.InternalCoroutinesApi
 
 
 /**
- * Here is an activity class that extended @{link AppCompatActivity}
+ * Here is an activity class that extended [AppCompatActivity]
  * and I've implemented it for some jobs:
  *
- * 1- I had the @{link InternalCoroutinesApi} annotation of coroutines,
+ * 1- I had the [InternalCoroutinesApi] annotation of coroutines,
  * this annotation marks declarations that are internal in coroutines API,
- * which means that should not be used outside of kotlinx.coroutines,
+ * which means that should not be used outside of [kotlinx.coroutines],
  * because their signatures and semantics will change between future releases
  * without any warnings and without providing any migration aid
  *
- * 2- I've defined the @{link AndroidEntryPoint} of the Hilt DI library
+ * 2- I've defined the [AndroidEntryPoint] of the Hilt DI library
  * this annotation marks an Android component class to be setup for injection
- * with the standard Hilt Dagger Android components.
+ * with the standard [Hilt] [Dagger] Android components.
  *
- * 3- Also, I have put the @{link NavHostFragment} into the layout of this activity.
+ * 3- Also, I have put the [NavHostFragment] into the layout of this activity.
  * I've created this project as a SingleActivity, it has this meaning that I'll have
- * only one Activity class along with many fragments that those will handle with NavigationComponent
+ * only one Activity class along with many fragments that those will handle with [NavigationComponent]
  */
 
 
