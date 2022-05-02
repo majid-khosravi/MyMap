@@ -7,6 +7,10 @@ import dagger.hilt.components.SingletonComponent
 import ir.majidkhosravi.data.apiservices.ApiService
 import retrofit2.Retrofit
 
+/**
+ * In this module we have provided an instance of the [ApiService]
+ */
+
 @Module(includes = [NetworkModule::class])
 @InstallIn(SingletonComponent::class)
 class ApiModule {

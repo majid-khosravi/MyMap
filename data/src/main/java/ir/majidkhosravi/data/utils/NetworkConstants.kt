@@ -1,5 +1,11 @@
 package ir.majidkhosravi.data.utils
 
+/**
+ *  A constant util object to hold some values are HARD CODED in the app or base API URL
+ *
+ */
+
+
 object NetworkConstants {
 
     const val BASE_URL = "https://fake-poi-api.mytaxi.com/"

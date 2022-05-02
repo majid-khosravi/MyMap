@@ -17,6 +17,18 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
+/**
+ * In this module we have defined some providers of are related to network connection:
+ *
+ * 1- [Gson], This is the main class for using Gson. Gson is typically used by first constructing a
+ * Gson instance and then invoking {@link #toJson(Object)} or {@link #fromJson(String, Class)} methods on it.
+ *
+ * 2- [OkHttpClient], OkHttp performs best when you create a single `OkHttpClient` instance and reuse it for all of
+ * your HTTP calls.
+ *
+ * 3- [Retrofit], Retrofit adapts a Java interface to HTTP calls by using annotations on the declared methods to
+ * define how requests are made.
+ */
 
 @Module
 @InstallIn(SingletonComponent::class)

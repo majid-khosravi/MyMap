@@ -8,6 +8,12 @@ import ir.majidkhosravi.domain.usecases.MapParams
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * The MapRemoteDateSource is one of the most important classes to fetch API response
+ * This class must implement the [RemoteDateSource] with its abstracted function
+ * in this case we have a function to get the response of the vehicle
+ */
+
 @Singleton
 class MapRemoteDateSource @Inject constructor(
     private val apiService: ApiService,

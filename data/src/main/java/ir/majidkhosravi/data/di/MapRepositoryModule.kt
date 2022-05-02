@@ -9,6 +9,11 @@ import ir.majidkhosravi.data.repositories.MapRepositoryImp
 import ir.majidkhosravi.domain.repositories.MapRepository
 
 
+/**
+ * In this module we have provided an instance of the [MapRepositoryImp] because the [MapRepository] is
+ * an interface and we can't create an instance of interfaces directly
+ */
+
 @Module
 @InstallIn(ActivityRetainedComponent::class)
 interface MapRepositoryModule {

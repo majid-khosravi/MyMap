@@ -9,6 +9,11 @@ import ir.majidkhosravi.domain.usecases.MapParams
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * This repository is related to the vehicles list,
+ * We have to create an instance of an implementation of [MapRepository] that we were created in the domain layer
+ */
+
 @Singleton
 class MapRepositoryImp @Inject constructor(
     private val mapRemoteDateSource: MapRemoteDateSource,

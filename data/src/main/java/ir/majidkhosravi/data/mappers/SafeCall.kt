@@ -10,6 +10,17 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.withContext
 
+/**
+ * We have two unit functions here that are providing some behaviors about synchronization:
+ *
+ * 1- [safeCall] is a unit function that makes an instance of [ApiResult] and returns it in the [CoroutineDispatcher.IO]]
+ *
+ * 2- [flowResult] is a unit function the same, but with the difference that this function takes an object of [ApiResult]
+ * and then returns the proper state of the result as a flowable object.
+ * This function is the most important to map the [ApiResult] into FlowResult.
+ * The [FlowResult] is the type that the repository has expected.
+ *
+ */
 
 suspend fun <T> safeCall(
     globalDispatcher: GlobalDispatcher,
