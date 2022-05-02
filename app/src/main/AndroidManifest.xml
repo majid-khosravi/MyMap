@@ -2,6 +2,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ir.majidkhosravi.mymap">
 
+    <!--
+    Author information:
+
+    Name: Majid Khosravi
+    Email: majid.khosravi89@gmail.com
+    Phone: +98 911 995 13 68
+    -->
+
+
+
+    <!--
+    Welcome to my code challenge!
+    This's a plain sample code of Google Maps that includes some new technologies and clean architecture.
+    I'm going to implement this application along with 4 main modules that according to clean arch structure, are:
+    1- The Data layer
+    2- The Domain layer
+    3- The Presentation(app) layer
+    4- And a common layer that is named the same as this that includes some common and shared classes
+    -->
+
+
+    <!--
+    Also, We have taken here:
+    1- An Internet permission to connect with the rest API endpoint and take some data
+    2- I've assigned the MapApplication as a basic class of the Application
+    3- I have added the Google Maps API_KEY as a meta-data here
+    -->
+
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
